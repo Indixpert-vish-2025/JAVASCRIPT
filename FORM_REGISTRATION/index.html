@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REGISTRATION FORM</title>
+</head>
+<body>
+
+  <h2>REGISTRATION FORM</h2>
+
+  <form id="myForm">
+
+    <label>First Name:</label><br>
+    <input type="text" id="fname" placeholder="Enter your first name"><br>
+    <span id="fnameError"></span><br>
+
+    <label>Last Name:</label><br>
+    <input type="text" id="lname" placeholder="Enter your last name"><br>
+    <span id="lnameError"></span><br>
+
+    <label>Email:</label><br>
+    <input type="email" id="email" placeholder="Enter valid email"><br>
+    <span id="emailError"></span><br>
+
+    <label>Mobile No:</label><br>
+    <input type="text" id="mobile" placeholder="Enter valid number"><br>
+    <span id="mobileError"></span><br>
+
+    <label>Password:</label><br>
+    <input type="password" id="password" placeholder="Enter password"><br>
+    <span id="passwordError"></span><br>
+
+    <label>Confirm Password:</label><br>
+    <input type="password" id="confirmPassword" placeholder="Confirm password"><br>
+    <span id="confirmPasswordError"></span><br>
+
+    <label>Gender:</label><br>
+    <input type="radio" name="gender" value="M"> Male
+    <input type="radio" name="gender" value="F"> Female
+    <input type="radio" name="gender" value="O"> Other<br>
+    <span id="genderError"></span><br>
+
+    <label>Skills:</label><br>
+    <input type="checkbox" name="skills" value="C"> C
+    <input type="checkbox" name="skills" value="Python"> Python
+    <input type="checkbox" name="skills" value="HTML"> HTML
+    <input type="checkbox" name="skills" value="CSS"> CSS
+    <input type="checkbox" name="skills" value="JavaScript"> JavaScript
+    <input type="checkbox" name="skills" value="Bootstrap"> Bootstrap
+    <input type="checkbox" name="skills" value="React"> React<br>
+    <span id="skillsError"></span><br>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+    <button type="reset" onclick="clearAll()">Clear</button>
+
+  </form>
+
+  <p id="successMsg"></p>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

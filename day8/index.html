@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricket Ball</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: lightgray;
+    }
+
+    .cricket-ball {
+      width: 120px;
+      height: 120px;
+      background-color: red;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .cricket-ball::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: white;
+      transform: translateY(-50%) rotate(-20deg);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cricket-ball"></div>
+
+</body>
+</html>

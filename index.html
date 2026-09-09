@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" cellspacing="0" cellpadding="8">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Address</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+
+    <script>
+        fetch('https://fakestoreapi.com/users')
+            .then(response => response.json())
+            .then(users => {
+                const tbody = document.getElementById('table-body');
+
+                users.forEach(user => {
+                    const tr = document.createElement('tr');
+                    const name = `${user.name.firstname} ${user.name.lastname}`;
+                    const email = user.email;
+                    const phone = user.phone;
+                    const address = `${user.address.number} ${user.address.street}, ${user.address.city}, ${user.address.zipcode}`;
+
+                    tr.innerHTML = `
+                        <td>${name}</td>
+                        <td>${email}</td>
+                        <td>${phone}</td>
+                        <td>${address}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+
+</html>
